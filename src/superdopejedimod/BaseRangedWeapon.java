@@ -43,36 +43,25 @@ public abstract class BaseRangedWeapon extends ItemBow implements SuperDopeObjec
 	}
 	
 	
+	@Override
 	public void registerObject() {
 		
 		// Register the item with the game.
-		GameRegistry.registerItem(this, this.name);
+		//GameRegistry.registerItem(this, this.name);
+		GameRegistry.register(this.setRegistryName(this.name));
 	}
 	
 	
+	@Override
 	public void registerRecipe() {
 		return;
 	}
 	
 	
+	@Override
 	public void registerModel() {
 	    
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 	    renderItem.getItemModelMesher().register(this, 0, new ModelResourceLocation(SuperDopeJediMod.MODID + ":" + ((BaseRangedWeapon) this).getName(), "inventory"));
-	}
-	
-	
-	public void generateEnd(World world, Random random, int i, int j) {
-		return;
-	}
-	
-	
-	public void generateSurface(World world, Random random, int i, int j) {
-		return;
-	}
-	
-	
-	public void generateNether(World world, Random random, int i, int j) {
-		return;
 	}
 }

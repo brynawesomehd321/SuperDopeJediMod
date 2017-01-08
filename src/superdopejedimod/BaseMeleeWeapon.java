@@ -43,36 +43,25 @@ public abstract class BaseMeleeWeapon extends ItemSword implements SuperDopeObje
 	}
 	
 	
+	@Override
 	public void registerObject() {
 		
 		// Register the item with the game.
-		GameRegistry.registerItem(this, this.name);
+		//GameRegistry.registerItem(this, this.name);
+		GameRegistry.register(this.setRegistryName(this.name));
 	}
 	
 	
+	@Override
 	public void registerRecipe() {
 		return;
 	}
 	
 	
+	@Override
 	public void registerModel() {
 	    
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 	    renderItem.getItemModelMesher().register(this, 0, new ModelResourceLocation(SuperDopeJediMod.MODID + ":" + ((BaseMeleeWeapon) this).getName(), "inventory"));
-	}
-	
-	
-	public void generateEnd(World world, Random random, int i, int j) {
-		return;
-	}
-	
-	
-	public void generateSurface(World world, Random random, int i, int j) {
-		return;
-	}
-	
-	
-	public void generateNether(World world, Random random, int i, int j) {
-		return;
 	}
 }

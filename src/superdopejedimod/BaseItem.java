@@ -38,13 +38,16 @@ public abstract class BaseItem extends Item implements SuperDopeObject {
 	}
 	
 	
+	@Override
 	public void registerObject() {
 		
 		// Register the item with the game.
-		GameRegistry.registerItem(this, name);
+		//GameRegistry.registerItem(this, name);
+		GameRegistry.register(this.setRegistryName(this.name));
 	}
 	
 	
+	@Override
 	public void registerRecipe() {
 		
 		// Example of registering a crafttable recipe.
@@ -61,26 +64,10 @@ public abstract class BaseItem extends Item implements SuperDopeObject {
 	}
 	
 	
+	@Override
 	public void registerModel() {
 	    
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-		String location = SuperDopeJediMod.MODID + ":" + ((BaseItem) this).getName();
-		System.out.println("SuperDopeSquad: registering item: " + location);
-	    renderItem.getItemModelMesher().register(this, 0, new ModelResourceLocation(location, "inventory"));
-	}
-	
-	
-	public void generateEnd(World world, Random random, int i, int j) {
-		return;
-	}
-	
-	
-	public void generateSurface(World world, Random random, int i, int j) {
-		return;
-	}
-	
-	
-	public void generateNether(World world, Random random, int i, int j) {
-		return;
+	    renderItem.getItemModelMesher().register(this, 0, new ModelResourceLocation(SuperDopeJediMod.MODID + ":" + this.getName(), "inventory"));
 	}
 }
