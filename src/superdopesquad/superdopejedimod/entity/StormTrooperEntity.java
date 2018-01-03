@@ -119,9 +119,9 @@ public class StormTrooperEntity extends BaseEntityTameable implements IRangedAtt
 	   FactionInfo factionInfo = SuperDopeJediMod.classManager.getFactionInfo(SuperDopeJediMod.classManager.FACTION_REPUBLIC);
 //>>>>>>> origin/master
 	   
-	   this.targetTasks.addTask(1, new EntityAIQuicklyOffended(this, true, false, 
-				SuperDopeJediMod.classManager.getFactionInfo(ClassManager.FACTION_EMPIRE)));  
-		this.targetTasks.addTask(2, new EntityAIEnemyFactionDetector(this, true, false, 16.0F, 
+//	   this.targetTasks.addTask(1, new EntityAIQuicklyOffended(this, true, false, 
+//				SuperDopeJediMod.classManager.getFactionInfo(ClassManager.FACTION_EMPIRE)));  
+		this.targetTasks.addTask(1, new EntityAIEnemyFactionDetector(this, true, false, 16.0F, 
 				SuperDopeJediMod.classManager.getFactionInfo(ClassManager.FACTION_REPUBLIC))); 
 	   
 	   // Priority 1: If you see someone from the Empire, shoot to kill.
@@ -161,8 +161,8 @@ public class StormTrooperEntity extends BaseEntityTameable implements IRangedAtt
 		
 		Class entityClass = StormTrooperEntity.class;
 		int weightedProbability = 10;
-		int minimumSpawnCount = 4;
-		int maximumSpawnCount = 8;
+		int minimumSpawnCount = 1;
+		int maximumSpawnCount = 4;
 		EnumCreatureType creatureType = EnumCreatureType.MONSTER;
 		
 		// add the spawn information to EntityRegistry through the addSpawn call.
@@ -182,25 +182,13 @@ public class StormTrooperEntity extends BaseEntityTameable implements IRangedAtt
 				Biomes.FOREST_HILLS,
 				Biomes.ICE_MOUNTAINS,
 				Biomes.ICE_PLAINS,
-				Biomes.JUNGLE,
-				Biomes.JUNGLE_EDGE,
-				Biomes.JUNGLE_HILLS,
-				Biomes.MESA,
-				Biomes.MESA_CLEAR_ROCK,
-				Biomes.MESA_ROCK,
 				Biomes.MUSHROOM_ISLAND,
 				Biomes.MUSHROOM_ISLAND_SHORE,
 				Biomes.PLAINS,
-				Biomes.REDWOOD_TAIGA,
-				Biomes.REDWOOD_TAIGA_HILLS,
-				Biomes.ROOFED_FOREST,
-				Biomes.SAVANNA,
-				Biomes.SAVANNA_PLATEAU,
-				Biomes.STONE_BEACH,
-				Biomes.SWAMPLAND,
-				Biomes.TAIGA,
-				Biomes.TAIGA_HILLS);
+				Biomes.SWAMPLAND 
+			);
 	}
+
 	
 	
 	@Override

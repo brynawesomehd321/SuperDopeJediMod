@@ -156,7 +156,7 @@ public class SuperDopeJediMod //Start the class Declaration
     public static CompressedMetalMesh compressedMetalMesh = new CompressedMetalMesh("compressedMetalMesh");
     public static BitsOfCompressedMetalMesh bitsOfCompressedMetalMesh = new BitsOfCompressedMetalMesh("bitsOfCompressedMetalMesh");
     
-    //Spaceship Entitys
+    //Spaceship Entities
     
     
     
